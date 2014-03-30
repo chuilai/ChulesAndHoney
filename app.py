@@ -4,10 +4,13 @@ from flask_bootstrap import Bootstrap
 
 from flask import render_template
 
-app = Flask(__name__)
 
-Bootstrap(app)
+def create_app():
+    app = Flask(__name__)
+    Bootstrap(app)
+    return app
 
+app = create_app()
 
 @app.route('/')
 def hello():
